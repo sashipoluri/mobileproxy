@@ -15,7 +15,7 @@ var proxy = httpProxy.createProxyServer({changeOrigin: true});
 // is made to the target. 
 // 
 proxy.on('proxyReq', function(proxyReq, req, res, options) {
-  proxyReq.setHeader('Authorization', 'bearer c1b6c48756cd44bd8166b526cea6a922486c8b4');
+  proxyReq.setHeader('Authorization', 'bearer 08c1ebd9145e9d03bb8f1a2256bb13e1adb4c0a8');
 });
  
 var server = http.createServer(function(req, res) {
