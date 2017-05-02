@@ -17,6 +17,11 @@ var proxy = httpProxy.createProxyServer({changeOrigin: true});
 proxy.on('proxyReq', function(proxyReq, req, res, options) {
   proxyReq.setHeader('Authorization', 'bearer 08c1ebd9145e9d03bb8f1a2256bb13e1adb4c0a8');
 });
+
+proxy.on('proxyRes', function(proxyRes, req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+});
  
 var server = http.createServer(function(req, res) {
   // You can define here your custom logic to handle the request 
